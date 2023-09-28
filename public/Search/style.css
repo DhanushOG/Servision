@@ -130,36 +130,13 @@ nav.sticky .menu-btn {
     margin: 25px;
 }
 
-.title {
-    text-align: left;
-    font-size: 39px;
-    color: #fff;
-    margin: 0;
-    padding-left: 2%;
-}
+/* Start */
 
-.menu {
-    text-align: center;
-    margin-top: 1px;
-}
-
-.menu-item {
-    display: inline-block;
-    margin: 0 20px;
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.menu-item:hover {
-    text-decoration: underline;
-}
 
 .search-box {
     max-width: auto;
     display: flex;
     align-items: center;
-    margin-top: 20px;
 }
 
 .search-input {
