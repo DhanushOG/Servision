@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repit</title>
-    <link rel="stylesheet" href="style.css">
+    <title>search</title>
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
+
 <body>
-    <header>
-        <h1 class="title">Repit</h1>
-        <div class="menu">
-            <a href="#" class="menu-item">Home</a>
-            <a href="#" class="menu-item">Service</a>
-            <a href="#" class="menu-item">Subscription</a>
-            <a href="#" class="menu-item">About</a>
+    <!-- Move to up button -->
+    <div class="scroll-button">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <!-- navgaition menu -->
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="#home">RepIt</a></div>
+            <ul class="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#subscription">Subscription</a></li>
+                <li><a href="/index.html#about">About</a></li>
+                <div class="cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </ul>
+            <div class="media-icons">
+                <a href="/Login/index.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+            </div>
         </div>
-    </header>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <!--Search bar-->
     <div class="container">
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Enter the location here">
             <button class="search-button">Search</button>
         </div>
+        <!--Garage list-->
         <h2 class="garage-heading">GARAGE</h2>
         <div class="garage-ro">
             <div class="garage-box">
@@ -69,5 +93,8 @@
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
