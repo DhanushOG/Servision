@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #profile-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #profile-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: #3498db;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        #edit-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #edit-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #save-button {
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add some hover effects */
+        #profile-container:hover {
+            transform: scale(1.05);
+        }
+
+        #profile-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Additional animation for form */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        /* nav */
+        .menu{
+            display: flex;
+        margin: 20px;
+        }
+        nav {
+            background-color: #3498db;
+            width: 100%;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .media-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .media-icons a {
+            margin-right: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #3498db;
+                text-align: center;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .cancel-btn {
+                display: none;
+                cursor: pointer;
+            }
+
+            .menu.show .cancel-btn {
+                display: block;
+            }
+        }
+
+        #profile-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 100px; /* Adjusted margin to make room for the navbar */
+        }
+
+        /* Add your existing styles for the profile container here */
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="navbar">
+        <div class="logo"><a href="#home">RepIt</a></div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#subscription">Subscription</a></li>
+            <li><a href="#about">About</a></li>
+            <div class="cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+        </ul>
+        <div class="media-icons">
+            <a href="./Login/index.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>
+
+<div id="profile-container" class="animate__animated animate__fadeIn">
+    <i id="profile-icon" class="fas fa-user"></i>
+    <div class="profile-info">
+        <p class="font-weight-bold">John Doe</p>
+        <p class="text-muted">john.doe@example.com</p>
+        <p class="text-muted">123 Street, City</p>
+    </div>
+    <button id="edit-button" onclick="toggleEditForm()">Edit Profile</button>
+    <form id="edit-form" class="animate-slide-in">
+        <div class="form-group">
+            <label for="new-name">New Name:</label>
+            <input type="text" class="form-control" id="new-name" name="new-name" placeholder="Enter new name">
+        </div>
+        <div class="form-group">
+            <label for="new-email">New Email:</label>
+            <input type="email" class="form-control" id="new-email" name="new-email" placeholder="Enter new email">
+        </div>
+        <div class="form-group">
+            <label for="new-address">New Address:</label>
+            <input type="text" class="form-control" id="new-address" name="new-address" placeholder="Enter new address">
+        </div>
+        <button type="button" id="save-button" onclick="saveChanges()">Save Changes</button>
+    </form>
+</div>
+<script src="script.js"></script>
+<script>
+  
+
+    function toggleEditForm() {
+        var editForm = document.getElementById('edit-form');
+        editForm.style.display = (editForm.style.display === 'none' || editForm.style.display === '') ? 'block' : 'none';
+    }
+
+    function saveChanges() {
+        var newName = document.getElementById('new-name').value;
+        var newEmail = document.getElementById('new-email').value;
+        var newAddress = document.getElementById('new-address').value;
+
+        // Update profile information
+        document.querySelector('.profile-info p:nth-child(1)').innerText = newName;
+        document.querySelector('.profile-info p:nth-child(2)').innerText = newEmail;
+        document.querySelector('.profile-info p:nth-child(3)').innerText = newAddress;
+
+        // Hide the edit form
+        document.getElementById('edit-form').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
